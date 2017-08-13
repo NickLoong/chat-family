@@ -7,7 +7,23 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-
+var request = require('request');
+var  options = {
+　　　　　　　method: 'post',
+            url: "http://www.baidu.com",
+            // form: content,
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded'
+            }
+          };
+          
+          request(options, function (err, res, body) {
+            if (err) {
+              console.log(err)
+            }else {
+              console.log(body);
+            }
+          })
 var app = express();
 
 // view engine setup
